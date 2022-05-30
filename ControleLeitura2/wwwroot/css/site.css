@@ -16,8 +16,9 @@ html {
 }
 
 body {
-   /* margin-bottom: 60px;*/
+    margin-bottom: 60px;
     background-image: url(/images/back.jpg);
+
    
 }
 
@@ -31,7 +32,7 @@ body {
 }
 
 .teste {
-    margin-top: -1px;
+    
     margin-left: -12px;
     margin-right: -12px;
 }
