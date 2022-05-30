@@ -1,0 +1,52 @@
+﻿@model HomeViewModel;
+ <partial name="_Carousel"/>
+ <br />
+<h3> Meus Livros Favoritos</h3>
+<br />
+<div class="row">
+    @foreach (var livros in Model.LivrosFavoritos)
+    {
+        <partial name="_LivrosResumo" for="@livros" />
+    }
+</div>
+<br />
+<br />
+@if (Model.LivrosLendoAgora.Count() > 0)
+{
+    <h3> Meus Livros Atuais</h3>
+    <br />
+    <div class="row">
+        @foreach (var livros in Model.LivrosLendoAgora)
+        {
+            <partial name="_LivrosResumo" for="@livros" />
+        }
+    </div>
+}
+
+<br />
+<br />
+@if (Model.LivrosParaLer.Count() > 0)
+{
+    <h3> Meus Livros Para Ler</h3>
+    <br />
+    <div class="row">
+        @foreach (var livros in Model.LivrosParaLer)
+        {
+            <partial name="_LivrosResumo" for="@livros" />
+        }
+    </div>
+}
+
+<br />
+<br />
+@if (Model.LivrosFinalizados.Count() > 0)
+{
+    <h3> Meus Livros Finalizados</h3>
+    <br />
+    <div class="row">
+        @foreach (var livros in Model.LivrosFinalizados)
+        {
+            <partial name="_LivrosResumo" for="@livros" />
+        }
+    </div>
+}

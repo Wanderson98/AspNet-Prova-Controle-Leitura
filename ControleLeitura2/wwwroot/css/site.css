@@ -1,0 +1,41 @@
+
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+   /* margin-bottom: 60px;*/
+    background-image: url(/images/back.jpg);
+   
+}
+
+.imagesize {
+    width: 250px;
+    height: 350px;
+}
+
+.imageCarousel {
+    height: 800px;
+}
+
+.teste {
+    margin-top: -1px;
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+.teste2 {
+    display : none;
+}

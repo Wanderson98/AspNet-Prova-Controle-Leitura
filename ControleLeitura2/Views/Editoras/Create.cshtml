@@ -1,0 +1,43 @@
+﻿@model ControleLeitura2.Models.Editora
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Adicionar Editora</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EditoraNome" class="control-label"></label>
+                <input asp-for="EditoraNome" class="form-control" />
+                <span asp-validation-for="EditoraNome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EditoraCnpj" class="control-label"></label>
+                <input asp-for="EditoraCnpj" class="form-control" />
+                <span asp-validation-for="EditoraCnpj" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EditoraEmail" class="control-label"></label>
+                <input asp-for="EditoraEmail" class="form-control" />
+                <span asp-validation-for="EditoraEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TelefoneEditora" class="control-label"></label>
+                <input asp-for="TelefoneEditora" class="form-control" />
+                <span asp-validation-for="TelefoneEditora" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary mt-2" />
+                <a asp-action="Index"  class="btn btn-outline-dark mt-2">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

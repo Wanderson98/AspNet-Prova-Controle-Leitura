@@ -1,0 +1,29 @@
+﻿@model Livro
+
+<div class="col-sm-4 col-md-4 col-lg-4" style = "background-color:white">
+    <a asp-controller="Livros" asp-action="Details" asp-route-livroId="@Model.LivroId">
+        <img src="@Model.LivroCapaCaminho" class="img-fluid imagesize">
+    </a>
+    <h4 class = "col-7">
+        @Model.NomeLivro
+    </h4>
+    <p>@Model.Autor.AutorNome - @Model.Editora.EditoraNome</p>
+    @if (Model.Status.StatusId == 3)
+    {
+        <p>Status: @Model.Status.NomeStatus - Nota: @Model.Nota</p>
+    }
+    else @if (Model.Status.StatusId == 2)
+    {
+        <p>Status: @Model.Status.NomeStatus - Pagina: @Model.PaginaAtual<br />
+           Prioridade: @Model.Prioridade.PrioridadeNome</p>
+    }
+    else
+    {
+        <p>Status: @Model.Status.NomeStatus</p> 
+        <p>Prioridade: @Model.Prioridade.PrioridadeNome</p>
+    }
+    <a asp-controller="Livros" asp-action="Details" asp-route-livroId="@Model.LivroId" style="color:black">
+        Mais Detalhes
+    </a>
+    <br /><br />
+</div>

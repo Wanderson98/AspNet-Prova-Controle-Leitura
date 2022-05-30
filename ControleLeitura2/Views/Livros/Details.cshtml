@@ -1,0 +1,52 @@
+﻿@model Livro
+
+@{
+    ViewData["Title"] = "Details";
+}
+<br />
+<h2>Detalhes do Livro</h2>
+
+<div class="container ">
+    <div class="row col-sm-6 col-md-6 col-lg-6">
+
+        <div class="card">
+            <div style = "float:left">
+                <img src="@Model.LivroCapaCaminho" class="img-fluid mt-2 imagesize" alt="...">
+            </div>
+
+            <div class="card-block">
+                <h2 class="card-title">@Model.NomeLivro</h2>
+                <h4 class="card-text">Autor: @Model.Autor.AutorNome - @Model.Autor.AutorNacionalidade</h4>
+                @if (Model.Status.StatusId == 3)
+                {
+                    <h5>@Model.Status.NomeStatus - Nota: @Model.Nota</h5>
+                }
+                else if(Model.Status.StatusId == 2)
+                {
+                    <p>Status : @Model.Status.NomeStatus <br/>  Prioridade: @Model.Prioridade.PrioridadeNome
+                    <br />Pagina Atual: @Model.PaginaAtual</p>
+                }
+                else
+                {
+                    <h5>Status : @Model.Status.NomeStatus <br/>  Prioridade: @Model.Prioridade.PrioridadeNome</h5>
+                }
+                <p class="card-text">Resumo: @Model.ResumoLivro</p>
+                <p class="card-text">Editora: @Model.Editora.EditoraNome</p>
+                <p class="btn btn-group align-content-lg-end">
+                    <a asp-controller="Livros" asp-action="Index" class="btn btn-outline-secondary ">Todos os Livros</a>
+                    <a asp-controller="Livros" asp-action="Detalhes"  asp-route-id="@Model.LivroId"
+                class="btn btn btn-outline-primary text-end">Atualizar Leitura</a>
+                    <a asp-controller="Livros" asp-action="Edit" asp-route-id="@Model.LivroId" class="btn btn-outline-warning ">Editar Livro</a>
+                    <a asp-controller="Livros" asp-action="Delete" asp-route-id="@Model.LivroId" class="btn btn-outline-danger ">Excluir Livro</a>
+                    
+                </p>
+
+               
+
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
